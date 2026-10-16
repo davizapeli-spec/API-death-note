@@ -23,5 +23,5 @@ model Personagem {
   nome      String
   idade     Int?
   poder     String?
-  descricao String?
+  especie String?
 }

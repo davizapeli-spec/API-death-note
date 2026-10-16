@@ -33,14 +33,14 @@ export default {
 
     create: async (request: Request, response: Response) => {
         try {
-            const { nome, apelido, ocupacao, raca } = request.body;
+            const { nome, idade, poder, especie } = request.body;
 
             const personagem = await prisma.personagem.create({
                 data: {
                     nome,
-                    apelido,
-                    ocupacao,
-                    raca
+                    idade,
+                     poder,
+                     especie
                 }
             });
 
@@ -53,15 +53,15 @@ export default {
     update: async (request: Request, response: Response) => {
         try {
             const { id } = request.params;
-            const { nome, apelido, ocupacao, raca } = request.body;
+            const { nome, idade, poder, especie } = request.body;
 
             const personagem = await prisma.personagem.update({
                 where: { id: Number(id) },
                 data: {
                     nome,
-                    apelido,
-                    ocupacao,
-                    raca
+                    idade,
+                    poder,
+                    especie
                 }
             });
 
